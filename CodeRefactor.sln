@@ -11,9 +11,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Static Utilities", "2. S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaticUtilities", "src\StaticUtilities\StaticUtilities.csproj", "{A9F375AF-8C03-421F-85C5-58CA6E7A48E0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Dependency Injection", "3. Dependency Injection", "{5988C5FB-7616-4C03-A308-4058A7BF6D32}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Dependency Injection", "4. Dependency Injection", "{5988C5FB-7616-4C03-A308-4058A7BF6D32}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyInjection", "src\DependencyInjection\DependencyInjection.csproj", "{DC4FB2FA-2D80-42B2-ACAA-A258008CE7E1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Non-Static", "3. Non-Static", "{9F468C31-7ACB-4258-885A-6A9EDDC8088C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NonStatic", "src\NonStatic\NonStatic.csproj", "{E8BC16C2-D1E3-423A-B0D4-E751F55433E3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,10 @@ Global
 		{DC4FB2FA-2D80-42B2-ACAA-A258008CE7E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC4FB2FA-2D80-42B2-ACAA-A258008CE7E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC4FB2FA-2D80-42B2-ACAA-A258008CE7E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8BC16C2-D1E3-423A-B0D4-E751F55433E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8BC16C2-D1E3-423A-B0D4-E751F55433E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8BC16C2-D1E3-423A-B0D4-E751F55433E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8BC16C2-D1E3-423A-B0D4-E751F55433E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,6 +49,7 @@ Global
 		{885539D6-FEE7-4950-8AC5-6FD2FC019798} = {597F1FAD-73CA-4777-9F8D-D38012CDE092}
 		{A9F375AF-8C03-421F-85C5-58CA6E7A48E0} = {CDEF408E-4296-47CE-A064-5532C0F6F1F8}
 		{DC4FB2FA-2D80-42B2-ACAA-A258008CE7E1} = {5988C5FB-7616-4C03-A308-4058A7BF6D32}
+		{E8BC16C2-D1E3-423A-B0D4-E751F55433E3} = {9F468C31-7ACB-4258-885A-6A9EDDC8088C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {912ECFA2-5C8C-4176-9272-636DD97398C7}
