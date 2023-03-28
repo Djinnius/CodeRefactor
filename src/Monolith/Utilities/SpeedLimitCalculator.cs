@@ -20,6 +20,11 @@ namespace Monolith.Utilities
         private static double portSpeedLimitInKmPerHour = 20; // navigate carefully in busy places
         private static double whaleSpeedLimitInKmPerHour = 15; // don't disturb whales
 
+
+
+
+
+
         public static OneOf<double, None> GetSpeedLimitForCurrentPosition()
         {
             // Read three coordinates from 'instrumentation system' e.g. aeroplanes have multiple sensors in case of a fault.
@@ -82,6 +87,11 @@ namespace Monolith.Utilities
 
             return currentSpeedLimit;
         }
+
+
+
+
+
 
         private static double CalculateDistance(Coordinate coordinate1, Coordinate coordinate2)
         {

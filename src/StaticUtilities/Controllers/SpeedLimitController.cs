@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Monolith.Utilities;
+using StaticUtilities.Utilities;
 
 namespace Monolith.Controllers
 {
