@@ -1,8 +1,8 @@
-﻿using DependencyInjection.Objects;
+﻿using DependencyInjectionWithOptions.Objects;
 using LazyCache;
 using Microsoft.Extensions.Caching.Memory;
 
-namespace DependencyInjection.Services.CoordinateProvider;
+namespace DependencyInjectionWithOptions.Services.CoordinateProvider;
 
 public class CoordinateProvider : ICoordinateProvider
 {

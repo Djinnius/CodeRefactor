@@ -1,10 +1,11 @@
-using DependencyInjection.Services.CoordinateAggregator;
-using DependencyInjection.Services.CoordinateProvider;
-using DependencyInjection.Services.SpeedLimitCalculator;
+using DependencyInjectionWithOptions.Services.CoordinateAggregator;
+using DependencyInjectionWithOptions.Services.CoordinateProvider;
+using DependencyInjectionWithOptions.Services.SpeedLimitCalculator;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddLazyCache();
 
 builder.Services.AddSingleton<ICoordinateProvider, CoordinateProvider>();
 builder.Services.AddSingleton<ICoordinateAggregator, CoordinateAggregator>();

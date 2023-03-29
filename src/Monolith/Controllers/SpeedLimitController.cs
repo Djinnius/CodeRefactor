@@ -1,17 +1,16 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Monolith.Utilities;
 
-namespace Monolith.Controllers
+namespace Monolith.Controllers;
+
+[Route("api/[controller]")]
+[ApiController]
+public class SpeedLimitController : ControllerBase
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class SpeedLimitController : ControllerBase
+    [HttpGet]
+    public IActionResult GetSpeedLimitInKilometersPerHour()
     {
-        [HttpGet]
-        public IActionResult GetSpeedLimitInKilometersPerHour()
-        {
-            var speedLimit = SpeedLimitCalculator.GetSpeedLimitForCurrentPosition();
-            return speedLimit.Match(m => Ok(m), _ => Ok("No Speed Limit"));
-        }
+        var speedLimit = SpeedLimitCalculator.GetSpeedLimitForCurrentPosition();
+        return speedLimit.Match(m => Ok(m), _ => Ok("No Speed Limit"));
     }
 }

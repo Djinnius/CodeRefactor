@@ -2,7 +2,7 @@
 using LazyCache;
 using Microsoft.Extensions.Caching.Memory;
 
-namespace NonStatic.Services.CoordinateProvider;
+namespace NonStatic.Services;
 
 public class CoordinateProvider
 {
