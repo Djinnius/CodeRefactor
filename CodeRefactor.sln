@@ -9,11 +9,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Monolith", "1. Monolith"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Static Utilities", "2. Static Utilities", "{CDEF408E-4296-47CE-A064-5532C0F6F1F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaticUtilities", "src\StaticUtilities\StaticUtilities.csproj", "{A9F375AF-8C03-421F-85C5-58CA6E7A48E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StaticUtilities", "src\StaticUtilities\StaticUtilities.csproj", "{A9F375AF-8C03-421F-85C5-58CA6E7A48E0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Dependency Injection", "4. Dependency Injection", "{5988C5FB-7616-4C03-A308-4058A7BF6D32}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyInjection", "src\DependencyInjection\DependencyInjection.csproj", "{DC4FB2FA-2D80-42B2-ACAA-A258008CE7E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyInjection", "src\DependencyInjection\DependencyInjection.csproj", "{DC4FB2FA-2D80-42B2-ACAA-A258008CE7E1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Non-Static", "3. Non-Static", "{9F468C31-7ACB-4258-885A-6A9EDDC8088C}"
 EndProject
@@ -30,6 +30,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "7. Dependency Injection With Options", "7. Dependency Injection With Options", "{B6B90F74-95DC-4D56-98E5-0C8605491C15}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyInjectionWithOptions", "src\DependencyInjectionWithOptions\DependencyInjectionWithOptions.csproj", "{88A87D7A-C542-474B-BE3F-36148DD78311}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "8. Dependency Injection With Packages", "8. Dependency Injection With Packages", "{1F390D26-9447-4A3A-965E-A65CA28F638E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyInjectionWithPackages", "src\DependencyInjectionWithPackages\DependencyInjectionWithPackages.csproj", "{59866FF3-2436-4FDB-9AE8-E1FB714F623A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,6 +69,10 @@ Global
 		{88A87D7A-C542-474B-BE3F-36148DD78311}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88A87D7A-C542-474B-BE3F-36148DD78311}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88A87D7A-C542-474B-BE3F-36148DD78311}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59866FF3-2436-4FDB-9AE8-E1FB714F623A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59866FF3-2436-4FDB-9AE8-E1FB714F623A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59866FF3-2436-4FDB-9AE8-E1FB714F623A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59866FF3-2436-4FDB-9AE8-E1FB714F623A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -77,6 +85,7 @@ Global
 		{769D8274-B13C-4D78-8104-73CBAF7DE67D} = {3C38B6F1-5517-470A-B2D6-72ECE345CEAB}
 		{58251753-841C-4C48-BC88-33032F1ACC5F} = {2F2DC854-8E2F-4D42-876F-7EFAE75774E6}
 		{88A87D7A-C542-474B-BE3F-36148DD78311} = {B6B90F74-95DC-4D56-98E5-0C8605491C15}
+		{59866FF3-2436-4FDB-9AE8-E1FB714F623A} = {1F390D26-9447-4A3A-965E-A65CA28F638E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {912ECFA2-5C8C-4176-9272-636DD97398C7}
