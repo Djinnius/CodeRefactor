@@ -1,4 +1,4 @@
-﻿namespace DependencyInjectionWithOptions.Objects;
+﻿namespace DependencyInjectionWithEnumerables.Objects;
 
 /// <summary>
 ///     A coordinate representing the position on a sphere in terms of latitude and longitude in decimal degrees.

@@ -1,6 +1,6 @@
-﻿using DependencyInjectionWithOptions.Objects;
+﻿using DependencyInjectionWithProviders.Objects;
 
-namespace DependencyInjectionWithOptions.Services.CoordinateAggregator;
+namespace DependencyInjectionWithProviders.Services.CoordinateAggregator;
 
 public interface ICoordinateAggregator
 {

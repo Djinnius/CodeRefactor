@@ -1,6 +1,6 @@
-﻿using DependencyInjectionWithOptions.Objects;
+﻿using DependencyInjectionWithEnumerables.Objects;
 
-namespace DependencyInjectionWithOptions.Services.CircleTracker;
+namespace DependencyInjectionWithEnumerables.Services.CircleTracker;
 
 /// <inheritdoc cref="ICircleTracker"/>
 public class CircleTracker : ICircleTracker // Singleton

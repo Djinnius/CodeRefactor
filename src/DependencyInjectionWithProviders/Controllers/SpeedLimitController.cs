@@ -1,4 +1,4 @@
-﻿using DependencyInjectionWithOptions.Services.SpeedLimitCalculator;
+﻿using DependencyInjectionWithProviders.Services.SpeedLimitCalculator;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Monolith.Controllers;

@@ -1,9 +1,9 @@
 ﻿using OneOf.Types;
 using OneOf;
-using DependencyInjectionWithOptions.Services.CoordinateAggregator;
-using DependencyInjectionWithOptions.Providers.Clock;
+using DependencyInjectionWithProviders.Services.CoordinateAggregator;
+using DependencyInjectionWithProviders.Providers.Clock;
 
-namespace DependencyInjectionWithOptions.Services.SpeedLimitCalculator;
+namespace DependencyInjectionWithProviders.Services.SpeedLimitCalculator;
 
 public class SpeedLimitCalculator : ISpeedLimitCalculator
 {

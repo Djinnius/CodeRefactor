@@ -1,10 +1,10 @@
-using DependencyInjectionWithOptions.Providers.Clock;
-using DependencyInjectionWithOptions.Providers.RandomProvider;
-using DependencyInjectionWithOptions.Services.CircleTracker;
-using DependencyInjectionWithOptions.Services.CurrentCoordinateAggregator;
-using DependencyInjectionWithOptions.Services.CurrentCoordinateProvider;
-using DependencyInjectionWithOptions.Services.SpeedLimitCalculator;
-using DependencyInjectionWithOptions.Services.SpeedLimitProviders;
+using DependencyInjectionWithEnumerables.Providers.Clock;
+using DependencyInjectionWithEnumerables.Providers.RandomProvider;
+using DependencyInjectionWithEnumerables.Services.CircleTracker;
+using DependencyInjectionWithEnumerables.Services.CurrentCoordinateAggregator;
+using DependencyInjectionWithEnumerables.Services.CurrentCoordinateProvider;
+using DependencyInjectionWithEnumerables.Services.SpeedLimitCalculator;
+using DependencyInjectionWithEnumerables.Services.SpeedLimitProviders;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);

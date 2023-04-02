@@ -1,7 +1,7 @@
 ﻿using OneOf.Types;
 using OneOf;
 
-namespace DependencyInjectionWithOptions.Services.SpeedLimitCalculator;
+namespace DependencyInjectionWithEnumerables.Services.SpeedLimitCalculator;
 
 /// <summary>
 ///     A utility class for determining speed limits in different contexts.

@@ -1,7 +1,7 @@
 ﻿using OneOf.Types;
 using OneOf;
 
-namespace DependencyInjectionWithOptions.Services.SpeedLimitCalculator;
+namespace DependencyInjectionWithProviders.Services.SpeedLimitCalculator;
 
 public interface ISpeedLimitCalculator
 {

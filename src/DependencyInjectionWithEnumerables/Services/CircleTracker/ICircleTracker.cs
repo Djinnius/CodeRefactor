@@ -1,6 +1,6 @@
-﻿using DependencyInjectionWithOptions.Objects;
+﻿using DependencyInjectionWithEnumerables.Objects;
 
-namespace DependencyInjectionWithOptions.Services.CircleTracker;
+namespace DependencyInjectionWithEnumerables.Services.CircleTracker;
 
 /// <summary>
 ///     Tracker for circle properties that may be updated regularly through the lifetime of the application.

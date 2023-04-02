@@ -1,8 +1,8 @@
-using DependencyInjectionWithOptions.Providers.Clock;
-using DependencyInjectionWithOptions.Providers.RandomProvider;
-using DependencyInjectionWithOptions.Services.CoordinateAggregator;
-using DependencyInjectionWithOptions.Services.CoordinateProvider;
-using DependencyInjectionWithOptions.Services.SpeedLimitCalculator;
+using DependencyInjectionWithProviders.Providers.Clock;
+using DependencyInjectionWithProviders.Providers.RandomProvider;
+using DependencyInjectionWithProviders.Services.CoordinateAggregator;
+using DependencyInjectionWithProviders.Services.CoordinateProvider;
+using DependencyInjectionWithProviders.Services.SpeedLimitCalculator;
 
 var builder = WebApplication.CreateBuilder(args);
 

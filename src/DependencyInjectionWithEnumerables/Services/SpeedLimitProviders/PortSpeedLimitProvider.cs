@@ -1,9 +1,9 @@
-﻿using DependencyInjectionWithOptions.Services.CircleTracker;
-using DependencyInjectionWithOptions.Services.CurrentCoordinateAggregator;
+﻿using DependencyInjectionWithEnumerables.Services.CircleTracker;
+using DependencyInjectionWithEnumerables.Services.CurrentCoordinateAggregator;
 using OneOf;
 using OneOf.Types;
 
-namespace DependencyInjectionWithOptions.Services.SpeedLimitProviders;
+namespace DependencyInjectionWithEnumerables.Services.SpeedLimitProviders;
 
 /// <inheritdoc cref="ISpeedLimitProvider"/>
 public class PortSpeedLimitProvider : ISpeedLimitProvider

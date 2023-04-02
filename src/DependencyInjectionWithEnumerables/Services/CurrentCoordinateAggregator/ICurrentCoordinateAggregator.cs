@@ -1,6 +1,6 @@
-﻿using DependencyInjectionWithOptions.Objects;
+﻿using DependencyInjectionWithEnumerables.Objects;
 
-namespace DependencyInjectionWithOptions.Services.CurrentCoordinateAggregator;
+namespace DependencyInjectionWithEnumerables.Services.CurrentCoordinateAggregator;
 
 /// <summary>
 ///     An aggregator taking multiple current coordinator inputs and returning

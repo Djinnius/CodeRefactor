@@ -1,8 +1,8 @@
-﻿using DependencyInjectionWithOptions.Services.SpeedLimitProviders;
+﻿using DependencyInjectionWithEnumerables.Services.SpeedLimitProviders;
 using OneOf;
 using OneOf.Types;
 
-namespace DependencyInjectionWithOptions.Services.SpeedLimitCalculator;
+namespace DependencyInjectionWithEnumerables.Services.SpeedLimitCalculator;
 
 /// <inheritdoc cref="ISpeedLimitCalculator"/>
 public class SpeedLimitCalculator : ISpeedLimitCalculator

@@ -1,9 +1,9 @@
-﻿using DependencyInjectionWithOptions.Objects;
-using DependencyInjectionWithOptions.Providers.RandomProvider;
+﻿using DependencyInjectionWithProviders.Objects;
+using DependencyInjectionWithProviders.Providers.RandomProvider;
 using LazyCache;
 using Microsoft.Extensions.Caching.Memory;
 
-namespace DependencyInjectionWithOptions.Services.CoordinateProvider;
+namespace DependencyInjectionWithProviders.Services.CoordinateProvider;
 
 public class CoordinateProvider : ICoordinateProvider
 {

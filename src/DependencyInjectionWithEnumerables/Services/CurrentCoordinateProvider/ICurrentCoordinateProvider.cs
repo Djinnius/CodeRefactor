@@ -1,6 +1,6 @@
-﻿using DependencyInjectionWithOptions.Objects;
+﻿using DependencyInjectionWithEnumerables.Objects;
 
-namespace DependencyInjectionWithOptions.Services.CurrentCoordinateProvider;
+namespace DependencyInjectionWithEnumerables.Services.CurrentCoordinateProvider;
 
 /// <summary>
 ///     A provider of current coordinates.

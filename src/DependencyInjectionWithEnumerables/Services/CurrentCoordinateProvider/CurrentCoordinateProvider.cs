@@ -1,10 +1,10 @@
-﻿using DependencyInjectionWithOptions.Objects;
-using DependencyInjectionWithOptions.Providers.RandomProvider;
-using DependencyInjectionWithOptions.Services.CircleTracker;
+﻿using DependencyInjectionWithEnumerables.Objects;
+using DependencyInjectionWithEnumerables.Providers.RandomProvider;
+using DependencyInjectionWithEnumerables.Services.CircleTracker;
 using LazyCache;
 using Microsoft.Extensions.Caching.Memory;
 
-namespace DependencyInjectionWithOptions.Services.CurrentCoordinateProvider;
+namespace DependencyInjectionWithEnumerables.Services.CurrentCoordinateProvider;
 
 /// <inheritdoc cref="ICurrentCoordinateProvider"/>
 public class CurrentCoordinateProvider : ICurrentCoordinateProvider

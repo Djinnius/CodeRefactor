@@ -1,4 +1,4 @@
-﻿namespace DependencyInjectionWithOptions.Providers.RandomProvider;
+﻿namespace DependencyInjectionWithProviders.Providers.RandomProvider;
 
 public class RandomProvider : IRandomProvider
 {

@@ -1,7 +1,7 @@
 ﻿using OneOf.Types;
 using OneOf;
 
-namespace DependencyInjectionWithOptions.Services.SpeedLimitProviders;
+namespace DependencyInjectionWithEnumerables.Services.SpeedLimitProviders;
 
 /// <summary>
 ///     A class for providing speed limits under specific conditions.

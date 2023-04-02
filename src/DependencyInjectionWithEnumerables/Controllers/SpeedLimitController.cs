@@ -1,5 +1,5 @@
-﻿using DependencyInjectionWithOptions.Services.CircleTracker;
-using DependencyInjectionWithOptions.Services.SpeedLimitCalculator;
+﻿using DependencyInjectionWithEnumerables.Services.CircleTracker;
+using DependencyInjectionWithEnumerables.Services.SpeedLimitCalculator;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Monolith.Controllers;

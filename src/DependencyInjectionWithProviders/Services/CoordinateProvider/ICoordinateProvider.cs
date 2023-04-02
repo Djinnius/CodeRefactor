@@ -1,6 +1,6 @@
-﻿using DependencyInjectionWithOptions.Objects;
+﻿using DependencyInjectionWithProviders.Objects;
 
-namespace DependencyInjectionWithOptions.Services.CoordinateProvider;
+namespace DependencyInjectionWithProviders.Services.CoordinateProvider;
 
 public interface ICoordinateProvider
 {

@@ -1,7 +1,7 @@
-﻿using DependencyInjectionWithOptions.Objects;
-using DependencyInjectionWithOptions.Services.CurrentCoordinateProvider;
+﻿using DependencyInjectionWithEnumerables.Objects;
+using DependencyInjectionWithEnumerables.Services.CurrentCoordinateProvider;
 
-namespace DependencyInjectionWithOptions.Services.CurrentCoordinateAggregator;
+namespace DependencyInjectionWithEnumerables.Services.CurrentCoordinateAggregator;
 
 /// <inheritdoc cref="ICurrentCoordinateAggregator"/>
 public class CurrentCoordinateAggregator : ICurrentCoordinateAggregator

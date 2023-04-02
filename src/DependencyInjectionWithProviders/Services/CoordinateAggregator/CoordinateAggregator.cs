@@ -1,7 +1,7 @@
-﻿using DependencyInjectionWithOptions.Objects;
-using DependencyInjectionWithOptions.Services.CoordinateProvider;
+﻿using DependencyInjectionWithProviders.Objects;
+using DependencyInjectionWithProviders.Services.CoordinateProvider;
 
-namespace DependencyInjectionWithOptions.Services.CoordinateAggregator;
+namespace DependencyInjectionWithProviders.Services.CoordinateAggregator;
 
 public class CoordinateAggregator : ICoordinateAggregator
 {

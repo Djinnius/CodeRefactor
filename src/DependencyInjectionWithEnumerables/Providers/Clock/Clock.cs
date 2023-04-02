@@ -1,4 +1,4 @@
-﻿namespace DependencyInjectionWithOptions.Providers.Clock;
+﻿namespace DependencyInjectionWithEnumerables.Providers.Clock;
 
 public class Clock : IClock
 {
