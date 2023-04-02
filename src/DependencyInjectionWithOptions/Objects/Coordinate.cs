@@ -3,14 +3,14 @@
 /// <summary>
 ///     A coordinate representing the position on a sphere in terms of latitude and longitude in decimal degrees.
 /// </summary>
-public readonly struct Coordinate : IEquatable<Coordinate>
+public struct Coordinate : IEquatable<Coordinate>
 {
     /// <summary>
     ///     The angular distance north or south of the earth's equator, measured in degrees 
     ///     along a meridian, as on a map or globe.
     /// </summary>
     /// <remarks> Values range between -90 and +90 decimal degrees. </remarks>
-    public double Latitude { get; }
+    public double Latitude { get; set; } = 0;
 
     /// <summary>
     ///     The angular distance on the earth's surface, measured east or west from the Prime 
@@ -18,7 +18,7 @@ public readonly struct Coordinate : IEquatable<Coordinate>
     ///     expressed in degrees.
     /// </summary>
     /// <remarks> Values range between -180 and +180 decimal degrees. </remarks>
-    public double Longitude { get; }
+    public double Longitude { get; set; } = 0;
 
     /// <inheritdoc cref="Coordinate"/>
     /// <param name="latitude"></param>
@@ -34,15 +34,6 @@ public readonly struct Coordinate : IEquatable<Coordinate>
 
         Latitude = latitude;
         Longitude = longitude;
-    }
-
-    /// <summary>
-    ///     A default coordinate representing the position (0,0) on a sphere.
-    /// </summary>
-    public Coordinate()
-    {
-        Latitude = 0;
-        Longitude = 0;
     }
 
     public override bool Equals(object? obj) => obj is Coordinate other && Equals(other);

@@ -7,11 +7,12 @@ namespace DependencyInjectionWithOptions.Services.CircleTracker;
 /// <inheritdoc cref="ICircleTracker"/>
 public class CircleTracker : ICircleTracker // Singleton
 {
+
     /// <inheritdoc cref="CircleTracker"/>
-    public CircleTracker()
+    public CircleTracker(IOptions<CircleOptions> circleOptions)
     {
         CurrentAngleInRadians = 0; // North
-        CircleCentreCoordinate = new Coordinate(51.5167, -0.1246);
+        CircleCentreCoordinate = circleOptions.Value.CircleCentreCoordinate;
     }
 
     public double CurrentAngleInRadians { get;private set; }
