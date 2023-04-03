@@ -9,7 +9,7 @@ using OneOf.Types;
 namespace DependencyInjectionWithPackages.Services.SpeedLimitProviders;
 
 /// <inheritdoc cref="ISpeedLimitProvider"/>
-public class WhaleSpeedLimitProvider : ISpeedLimitProvider
+public sealed class WhaleSpeedLimitProvider : ISpeedLimitProvider
 {
     private readonly ICurrentCoordinateProvider _coordinateAggregator;
     private readonly ICircleTracker _circleTracker;

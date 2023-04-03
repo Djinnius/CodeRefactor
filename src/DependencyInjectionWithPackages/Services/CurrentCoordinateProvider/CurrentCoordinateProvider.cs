@@ -5,7 +5,7 @@ using GpsPackage.Services.GpsCoordinateAveragingService;
 namespace DependencyInjectionWithPackages.Services.CurrentCoordinateProvider;
 
 /// <inheritdoc cref="ICurrentCoordinateProvider"/>
-public class CurrentCoordinateProvider : ICurrentCoordinateProvider
+public sealed class CurrentCoordinateProvider : ICurrentCoordinateProvider
 {
     private readonly IGpsInstrumentationProvider _gpsInstrumentationProvider;
     private readonly IGpsCoordinateAveragingService _gpsCoordinateAveragingService;

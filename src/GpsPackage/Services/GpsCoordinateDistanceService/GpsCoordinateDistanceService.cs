@@ -4,7 +4,7 @@ using Microsoft.Extensions.Options;
 namespace GpsPackage.Services.GpsCoordinateDistanceService;
 
 /// <inheritdoc cref="IGpsCoordinateDistanceService"/>
-internal class GpsCoordinateDistanceService : IGpsCoordinateDistanceService
+internal sealed class GpsCoordinateDistanceService : IGpsCoordinateDistanceService
 {
     private readonly GlobeOptions _globeOptions;
 

@@ -164,3 +164,7 @@ csharp_style_unused_value_expression_statement_preference = discard_variable:sil
 [*.vb]
 # Modifier preferences
 visual_basic_preferred_modifier_order = Partial,Default,Private,Protected,Public,Friend,NotOverridable,Overridable,MustOverride,Overloads,Overrides,MustInherit,NotInheritable,Static,Shared,Shadows,ReadOnly,WriteOnly,Dim,Const,WithEvents,Widening,Narrowing,Custom,Async:suggestion
+###############################
+# .NET 7 Settings             #
+###############################
+dotnet_diagnostic.CA1852.severity = warning

@@ -15,7 +15,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\..\GpsPackage\GpsPackage.csproj" />
+	  <ProjectReference Include="..\GpsPackage\GpsPackage.csproj" />
 	</ItemGroup>
 
 </Project>

@@ -5,7 +5,7 @@ using OneOf.Types;
 namespace DependencyInjectionWithPackages.Services.SpeedLimitCalculator;
 
 /// <inheritdoc cref="ISpeedLimitCalculator"/>
-public class SpeedLimitCalculator : ISpeedLimitCalculator
+public sealed class SpeedLimitCalculator : ISpeedLimitCalculator
 {
     private readonly IEnumerable<ISpeedLimitProvider> _speedLimitProviders;
 

@@ -10,7 +10,7 @@ using Microsoft.Extensions.Options;
 namespace DependencyInjectionWithPackages.Services.GpsInstrumentationProvider;
 
 /// <inheritdoc cref="IGpsInstrumentationProvider"/>
-public class GpsInstrumentationProvider : IGpsInstrumentationProvider
+public sealed class GpsInstrumentationProvider : IGpsInstrumentationProvider
 {
     private readonly IAppCache _appCache;
     private readonly ILogger<GpsInstrumentationProvider> _logger;

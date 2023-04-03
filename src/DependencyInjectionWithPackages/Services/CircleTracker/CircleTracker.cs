@@ -5,7 +5,7 @@ using Microsoft.Extensions.Options;
 namespace DependencyInjectionWithPackages.Services.CircleTracker;
 
 /// <inheritdoc cref="ICircleTracker"/>
-public class CircleTracker : ICircleTracker // Singleton
+public sealed class CircleTracker : ICircleTracker // Singleton
 {
 
     /// <inheritdoc cref="CircleTracker"/>

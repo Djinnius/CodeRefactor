@@ -8,7 +8,7 @@ using OneOf.Types;
 namespace DependencyInjectionWithPackages.Services.SpeedLimitProviders;
 
 /// <inheritdoc cref="ISpeedLimitProvider"/>
-public class EnvironmentalSpeedLimitProvider : ISpeedLimitProvider
+public sealed class EnvironmentalSpeedLimitProvider : ISpeedLimitProvider
 {
     private readonly ICurrentCoordinateProvider _coordinateAggregator;
     private readonly ICircleTracker _circleTracker;
