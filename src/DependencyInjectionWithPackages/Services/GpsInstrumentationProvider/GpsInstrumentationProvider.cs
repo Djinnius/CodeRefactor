@@ -1,7 +1,8 @@
-﻿using DependencyInjectionWithPackages.Objects;
-using DependencyInjectionWithPackages.Options;
+﻿using DependencyInjectionWithPackages.Options;
 using DependencyInjectionWithPackages.Providers.RandomProvider;
 using DependencyInjectionWithPackages.Services.CircleTracker;
+using GpsPackage;
+using GpsPackage.Options;
 using LazyCache;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Options;

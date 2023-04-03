@@ -1,4 +1,4 @@
-using DependencyInjectionWithPackages.Options;
+﻿using DependencyInjectionWithPackages.Options;
 using DependencyInjectionWithPackages.Providers.Clock;
 using DependencyInjectionWithPackages.Providers.RandomProvider;
 using DependencyInjectionWithPackages.Services.CircleTracker;
@@ -6,8 +6,8 @@ using DependencyInjectionWithPackages.Services.CurrentCoordinateProvider;
 using DependencyInjectionWithPackages.Services.GpsInstrumentationProvider;
 using DependencyInjectionWithPackages.Services.SpeedLimitCalculator;
 using DependencyInjectionWithPackages.Services.SpeedLimitProviders;
+using GpsPackage.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,8 +28,9 @@ builder.Services.AddSingleton<IRandomProvider, RandomProvider>();
 builder.Services.AddSingleton<IClock, Clock>();
 
 builder.Services.Configure<CircleOptions>(builder.Configuration.GetSection(CircleOptions.SectionName));
-builder.Services.Configure<GlobeOptions>(builder.Configuration.GetSection(GlobeOptions.SectionName));
 builder.Services.Configure<SpeedLimitOptions>(builder.Configuration.GetSection(SpeedLimitOptions.SectionName));
+
+builder.Services.AddGpsServices(builder.Configuration);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

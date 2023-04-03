@@ -1,9 +1,9 @@
-﻿using DependencyInjectionWithPackages.Objects;
+﻿using GpsPackage;
 
 namespace DependencyInjectionWithPackages.Services.CurrentCoordinateProvider;
 
 /// <summary>
-///     Provides the current coordinates.
+///     Provider service for retrieving the current coordinate.
 /// </summary>
 public interface ICurrentCoordinateProvider
 {

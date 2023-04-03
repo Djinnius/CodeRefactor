@@ -1,4 +1,4 @@
-﻿using DependencyInjectionWithPackages.Objects;
+﻿using GpsPackage;
 
 namespace DependencyInjectionWithPackages.Services.CircleTracker;
 

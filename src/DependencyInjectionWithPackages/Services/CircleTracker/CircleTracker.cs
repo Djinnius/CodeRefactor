@@ -1,5 +1,5 @@
-﻿using DependencyInjectionWithPackages.Objects;
-using DependencyInjectionWithPackages.Options;
+﻿using DependencyInjectionWithPackages.Options;
+using GpsPackage;
 using Microsoft.Extensions.Options;
 
 namespace DependencyInjectionWithPackages.Services.CircleTracker;
@@ -15,9 +15,9 @@ public class CircleTracker : ICircleTracker // Singleton
         CircleCentreCoordinate = circleOptions.Value.CircleCentreCoordinate;
     }
 
-    public double CurrentAngleInRadians { get;private set; }
+    public double CurrentAngleInRadians { get; private set; }
 
-    public Coordinate CircleCentreCoordinate {get; private set; }
+    public Coordinate CircleCentreCoordinate { get; private set; }
 
     public double IncrementAngle(double incrementInRadians)
     {

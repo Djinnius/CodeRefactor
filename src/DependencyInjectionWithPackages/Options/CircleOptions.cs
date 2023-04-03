@@ -1,4 +1,4 @@
-﻿using DependencyInjectionWithPackages.Objects;
+﻿using GpsPackage;
 using Microsoft.Extensions.Options;
 
 namespace DependencyInjectionWithPackages.Options;

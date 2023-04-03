@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Options;
 
-namespace DependencyInjectionWithPackages.Options;
+namespace GpsPackage.Options;
 
 public class GlobeOptions : IOptions<GlobeOptions>
 {
