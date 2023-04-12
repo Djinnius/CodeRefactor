@@ -2,11 +2,15 @@
 
 namespace DependencyInjectionWithPackages.Services.CurrentCoordinateProvider;
 
+/// <summary>
+///     Decorator for the <see cref="ICurrentCoordinateProvider"/> interface, adding logging.
+/// </summary>
 public class CurrentCoordinateProviderLoggingDecorator : ICurrentCoordinateProvider
 {
     private readonly ICurrentCoordinateProvider _currentCoordinateProvider;
     private readonly ILogger<CurrentCoordinateProviderLoggingDecorator> _logger;
 
+    /// <inheritdoc cref="CurrentCoordinateProviderLoggingDecorator"/>
     public CurrentCoordinateProviderLoggingDecorator(ICurrentCoordinateProvider currentCoordinateProvider, ILogger<CurrentCoordinateProviderLoggingDecorator> logger)
     {
         _currentCoordinateProvider = currentCoordinateProvider;
