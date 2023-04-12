@@ -8,6 +8,7 @@ using GpsPackage.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using PseudoRandom.Package.DependencyInjection;
 using Timing.Package.DependencyInjection;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +21,7 @@ builder.Services.TryAddEnumerable(ServiceDescriptor.Singleton<ISpeedLimitProvide
 
 builder.Services.AddSingleton<IGpsInstrumentationProvider, GpsInstrumentationProvider>();
 builder.Services.AddSingleton<ICurrentCoordinateProvider, CurrentCoordinateProvider>();
+builder.Services.Decorate<ICurrentCoordinateProvider, CurrentCoordinateProviderLoggingDecorator>();
 builder.Services.AddSingleton<ISpeedLimitCalculator, SpeedLimitCalculator>();
 
 builder.Services.Configure<CircleOptions>(builder.Configuration.GetSection(CircleOptions.SectionName));
@@ -36,9 +38,15 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Configure logging
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.Debug() // Recommend Seq for local logging (docker image available).
+    .CreateLogger();
 
+builder.Host.UseSerilog();
 
 var app = builder.Build();
+app.UseSerilogRequestLogging();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

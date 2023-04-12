@@ -69,9 +69,6 @@ public sealed class GpsInstrumentationProvider : IGpsInstrumentationProvider
     private Coordinate GetCurrentCoordinate()
     {
         var coordinate = _appCache.GetOrAdd("CurrentCoordinate", () => GetCurrentCoordinateInner(), new MemoryCacheEntryOptions { AbsoluteExpiration = DateTimeOffset.UtcNow.AddMilliseconds(200) });
-
-        _logger.LogInformation(coordinate.ToString());
-
         return coordinate;
 
         Coordinate GetCurrentCoordinateInner()
