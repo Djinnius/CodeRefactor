@@ -1,4 +1,7 @@
-﻿namespace GpsPackage.Test.Extensions;
+﻿using GpsPackage.DataObjects;
+using GpsPackage.Extensions;
+
+namespace GpsPackage.Test.Extensions;
 
 /// <summary>
 ///     Unit Tests for the <see cref="CoordinateExtensions.AverageWith(Coordinate, Coordinate)"/> 

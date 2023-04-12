@@ -1,4 +1,5 @@
-﻿using GpsPackage.Options;
+﻿using GpsPackage.DataObjects;
+using GpsPackage.Options;
 using Microsoft.Extensions.Options;
 
 namespace GpsPackage.Services.GpsCoordinateDistanceService;
@@ -8,6 +9,7 @@ internal sealed class GpsCoordinateDistanceService : IGpsCoordinateDistanceServi
 {
     private readonly GlobeOptions _globeOptions;
 
+    /// <inheritdoc cref="GpsCoordinateDistanceService"/>
     public GpsCoordinateDistanceService(IOptions<GlobeOptions> globeOptions)
     {
         _globeOptions = globeOptions.Value;

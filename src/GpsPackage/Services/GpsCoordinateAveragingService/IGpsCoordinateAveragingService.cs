@@ -1,4 +1,6 @@
-﻿namespace GpsPackage.Services.GpsCoordinateAveragingService;
+﻿using GpsPackage.DataObjects;
+
+namespace GpsPackage.Services.GpsCoordinateAveragingService;
 
 /// <summary>
 ///     Contains service methods for averaging multiple provided coordinates.

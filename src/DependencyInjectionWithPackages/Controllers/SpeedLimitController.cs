@@ -4,6 +4,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Monolith.Controllers;
 
+/// <summary>
+///     Single Responsibility: Return speed limits under various conditions.
+/// </summary>
 [Route("api/[controller]")]
 [ApiController]
 public class SpeedLimitController : ControllerBase

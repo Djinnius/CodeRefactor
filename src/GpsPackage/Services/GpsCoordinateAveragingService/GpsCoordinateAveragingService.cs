@@ -1,4 +1,6 @@
-﻿using GpsPackage.Services.GpsCoordinateDistanceService;
+﻿using GpsPackage.DataObjects;
+using GpsPackage.Extensions;
+using GpsPackage.Services.GpsCoordinateDistanceService;
 
 namespace GpsPackage.Services.GpsCoordinateAveragingService;
 
@@ -7,6 +9,7 @@ internal sealed class GpsCoordinateAveragingService : IGpsCoordinateAveragingSer
 {
     private readonly IGpsCoordinateDistanceService _gpsCoordinateDistanceService;
 
+    /// <inheritdoc cref="GpsCoordinateAveragingService"/>
     public GpsCoordinateAveragingService(IGpsCoordinateDistanceService gpsCoordinateDistanceService)
     {
         _gpsCoordinateDistanceService = gpsCoordinateDistanceService;

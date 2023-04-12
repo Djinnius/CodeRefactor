@@ -1,10 +1,9 @@
 ﻿using DependencyInjectionWithPackages.Options;
-using DependencyInjectionWithPackages.Providers.Clock;
-using DependencyInjectionWithPackages.Services.CircleTracker;
 using DependencyInjectionWithPackages.Services.CurrentCoordinateProvider;
 using Microsoft.Extensions.Options;
 using OneOf;
 using OneOf.Types;
+using Timing.Package.Clocks;
 
 namespace DependencyInjectionWithPackages.Services.SpeedLimitProviders;
 
@@ -12,16 +11,20 @@ namespace DependencyInjectionWithPackages.Services.SpeedLimitProviders;
 public sealed class WhaleSpeedLimitProvider : ISpeedLimitProvider
 {
     private readonly ICurrentCoordinateProvider _coordinateAggregator;
-    private readonly ICircleTracker _circleTracker;
     private readonly IClock _clock;
+    private readonly CircleOptions _circleOptions;
     private readonly SpeedLimitOptions _speedLimitOptions;
 
     /// <inheritdoc cref="WhaleSpeedLimitProvider"/>
-    public WhaleSpeedLimitProvider(ICurrentCoordinateProvider coordinateAggregator, ICircleTracker circleTracker, IClock clock, IOptions<SpeedLimitOptions> speedLimitOptions)
+    public WhaleSpeedLimitProvider(
+        ICurrentCoordinateProvider coordinateAggregator,
+        IClock clock,
+        IOptions<CircleOptions> circleOptions,
+        IOptions<SpeedLimitOptions> speedLimitOptions)
     {
         _coordinateAggregator = coordinateAggregator;
-        _circleTracker = circleTracker;
         _clock = clock;
+        _circleOptions = circleOptions.Value;
         _speedLimitOptions = speedLimitOptions.Value;
     }
 
@@ -35,8 +38,8 @@ public sealed class WhaleSpeedLimitProvider : ISpeedLimitProvider
         var endOfWhaleSeason = new DateTime(currentYear, 6, 1); // June 1st
 
         // Whale speed restrictions apply in top right quadrant of circle in March, April and May
-        if (currentCoordinate.Latitude > _circleTracker.CircleCentreCoordinate.Latitude && 
-            currentCoordinate.Longitude > _circleTracker.CircleCentreCoordinate.Longitude && 
+        if (currentCoordinate.Latitude > _circleOptions.CircleCentreCoordinate.Latitude &&
+            currentCoordinate.Longitude > _circleOptions.CircleCentreCoordinate.Longitude &&
             currentDate >= startOfWhaleSeason && currentDate < endOfWhaleSeason)
             return _speedLimitOptions.WhaleSpeedLimitInKm;
 

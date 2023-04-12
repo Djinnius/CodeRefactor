@@ -1,5 +1,4 @@
 ﻿using DependencyInjectionWithPackages.Options;
-using DependencyInjectionWithPackages.Services.CircleTracker;
 using DependencyInjectionWithPackages.Services.CurrentCoordinateProvider;
 using Microsoft.Extensions.Options;
 using OneOf;
@@ -10,24 +9,27 @@ namespace DependencyInjectionWithPackages.Services.SpeedLimitProviders;
 /// <inheritdoc cref="ISpeedLimitProvider"/>
 public sealed class EnvironmentalSpeedLimitProvider : ISpeedLimitProvider
 {
-    private readonly ICurrentCoordinateProvider _coordinateAggregator;
-    private readonly ICircleTracker _circleTracker;
+    private readonly ICurrentCoordinateProvider _currentCoordinateProvider;
+    private readonly CircleOptions _circleOptions;
     private readonly SpeedLimitOptions _speedLimitOptions;
 
     /// <inheritdoc cref="EnvironmentalSpeedLimitProvider"/>
-    public EnvironmentalSpeedLimitProvider(ICurrentCoordinateProvider coordinateAggregator, ICircleTracker circleTracker, IOptions<SpeedLimitOptions> speedLimitOptions)
+    public EnvironmentalSpeedLimitProvider(
+        ICurrentCoordinateProvider currentCoordinateProvider,
+        IOptions<CircleOptions> circleOptions,
+        IOptions<SpeedLimitOptions> speedLimitOptions)
     {
-        _coordinateAggregator = coordinateAggregator;
-        _circleTracker = circleTracker;
+        _currentCoordinateProvider = currentCoordinateProvider;
+        _circleOptions = circleOptions.Value;
         _speedLimitOptions = speedLimitOptions.Value;
     }
 
     public OneOf<double, None> GetCurrentSpeedLimit()
     {
-        var currentCoordinate = _coordinateAggregator.GetCurrentCoordinate();
+        var currentCoordinate = _currentCoordinateProvider.GetCurrentCoordinate();
 
         // Environmental speed restrictions apply in top half of circle
-        if (currentCoordinate.Latitude > _circleTracker.CircleCentreCoordinate.Latitude)
+        if (currentCoordinate.Latitude > _circleOptions.CircleCentreCoordinate.Latitude)
             return _speedLimitOptions.EnvironmentalSpeedLimitInKm;
 
         return new None();

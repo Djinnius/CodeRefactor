@@ -1,4 +1,6 @@
-﻿namespace GpsPackage.Services.GpsCoordinateDistanceService;
+﻿using GpsPackage.DataObjects;
+
+namespace GpsPackage.Services.GpsCoordinateDistanceService;
 
 /// <summary>
 ///     Contains service methods for determining distance between two or more coordinates.

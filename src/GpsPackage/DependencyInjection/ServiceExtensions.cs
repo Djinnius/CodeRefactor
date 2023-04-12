@@ -7,6 +7,9 @@ using Microsoft.Extensions.Configuration;
 
 namespace GpsPackage.DependencyInjection;
 
+/// <summary>
+///     Extension methods to register all default services and options for the <see cref="GpsPackage"/>.
+/// </summary>
 public static class ServiceExtensions
 {
 
@@ -22,6 +25,12 @@ public static class ServiceExtensions
         return services;
     }
 
+    /// <summary>
+    ///     Registers the GPS services and options from app settings for the <see cref="GpsPackage"/> package.
+    /// </summary>
+    /// <param name="services"> The service collection to register with. </param>
+    /// <param name="configuration"> The configuration to read options from. </param>
+    /// <returns> The service collection. </returns>
     public static IServiceCollection AddGpsServices(this IServiceCollection services, IConfiguration configuration)
     {
         // read default options from app settings json.

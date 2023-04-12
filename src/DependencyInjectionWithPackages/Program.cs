@@ -1,6 +1,4 @@
 ﻿using DependencyInjectionWithPackages.Options;
-using DependencyInjectionWithPackages.Providers.Clock;
-using DependencyInjectionWithPackages.Providers.RandomProvider;
 using DependencyInjectionWithPackages.Services.CircleTracker;
 using DependencyInjectionWithPackages.Services.CurrentCoordinateProvider;
 using DependencyInjectionWithPackages.Services.GpsInstrumentationProvider;
@@ -8,12 +6,12 @@ using DependencyInjectionWithPackages.Services.SpeedLimitCalculator;
 using DependencyInjectionWithPackages.Services.SpeedLimitProviders;
 using GpsPackage.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using PseudoRandom.Package.DependencyInjection;
+using Timing.Package.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddLazyCache();
-
+// Add API services
 builder.Services.AddSingleton<ICircleTracker, CircleTracker>();
 
 builder.Services.TryAddEnumerable(ServiceDescriptor.Singleton<ISpeedLimitProvider, EnvironmentalSpeedLimitProvider>());
@@ -24,18 +22,21 @@ builder.Services.AddSingleton<IGpsInstrumentationProvider, GpsInstrumentationPro
 builder.Services.AddSingleton<ICurrentCoordinateProvider, CurrentCoordinateProvider>();
 builder.Services.AddSingleton<ISpeedLimitCalculator, SpeedLimitCalculator>();
 
-builder.Services.AddSingleton<IRandomProvider, RandomProvider>();
-builder.Services.AddSingleton<IClock, Clock>();
-
 builder.Services.Configure<CircleOptions>(builder.Configuration.GetSection(CircleOptions.SectionName));
 builder.Services.Configure<SpeedLimitOptions>(builder.Configuration.GetSection(SpeedLimitOptions.SectionName));
 
+// Add package services
+builder.Services.AddPseudoRandomServices(builder.Configuration);
+builder.Services.AddTimingServices(builder.Configuration);
 builder.Services.AddGpsServices(builder.Configuration);
+builder.Services.AddLazyCache();
 
+// Add end points
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+
 
 var app = builder.Build();
 

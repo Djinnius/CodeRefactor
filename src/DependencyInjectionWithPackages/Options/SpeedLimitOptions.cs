@@ -2,6 +2,9 @@
 
 namespace DependencyInjectionWithPackages.Options;
 
+/// <summary>
+///     Options class containing the speed limits the vessel may encounter.
+/// </summary>
 public class SpeedLimitOptions : IOptions<SpeedLimitOptions>
 {
     /// <summary>

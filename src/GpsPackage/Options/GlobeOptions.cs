@@ -2,6 +2,9 @@
 
 namespace GpsPackage.Options;
 
+/// <summary>
+///     Options class containing the globe configuration.
+/// </summary>
 public class GlobeOptions : IOptions<GlobeOptions>
 {
     /// <summary>

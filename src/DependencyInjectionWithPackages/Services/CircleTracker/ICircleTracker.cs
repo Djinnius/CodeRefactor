@@ -1,4 +1,4 @@
-﻿using GpsPackage;
+﻿using GpsPackage.DataObjects;
 
 namespace DependencyInjectionWithPackages.Services.CircleTracker;
 
@@ -11,11 +11,6 @@ public interface ICircleTracker
     ///     The current angle within the circle from a reference of 0 being North.
     /// </summary>
     double CurrentAngleInRadians { get; }
-
-    /// <summary>
-    ///     The centre of the circle.
-    /// </summary>
-    Coordinate CircleCentreCoordinate { get; }
 
     /// <summary>
     ///     Increases the <see cref="CurrentAngleInRadians"/> by the specified <paramref name="incrementInRadians"/>.

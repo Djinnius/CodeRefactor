@@ -16,6 +16,8 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\GpsPackage\GpsPackage.csproj" />
+	  <ProjectReference Include="..\Random\PseudoRandom.Package.csproj" />
+	  <ProjectReference Include="..\Timing\Timing.Package.csproj" />
 	</ItemGroup>
 
 </Project>

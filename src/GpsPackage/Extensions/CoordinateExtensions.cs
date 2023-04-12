@@ -1,4 +1,6 @@
-﻿namespace GpsPackage;
+﻿using GpsPackage.DataObjects;
+
+namespace GpsPackage.Extensions;
 
 /// <summary>
 ///     Extension methods for the <see cref="Coordinate"/> struct.

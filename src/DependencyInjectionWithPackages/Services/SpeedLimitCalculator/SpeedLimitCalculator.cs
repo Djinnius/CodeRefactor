@@ -17,6 +17,7 @@ public sealed class SpeedLimitCalculator : ISpeedLimitCalculator
 
     public OneOf<double, None> GetSpeedLimitForCurrentPosition()
     {
+        // Filter to a list of all numeric speed limits.
         var speedLimits = _speedLimitProviders.Select(x => x.GetCurrentSpeedLimit()).Where(x => x.IsT0).Select(x => x.AsT0).ToList();
 
         if (speedLimits.Any())

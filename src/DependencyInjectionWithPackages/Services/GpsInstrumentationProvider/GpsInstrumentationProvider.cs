@@ -1,11 +1,11 @@
 ﻿using DependencyInjectionWithPackages.Options;
-using DependencyInjectionWithPackages.Providers.RandomProvider;
 using DependencyInjectionWithPackages.Services.CircleTracker;
-using GpsPackage;
+using GpsPackage.DataObjects;
 using GpsPackage.Options;
 using LazyCache;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Options;
+using PseudoRandom.Package.Randomness;
 
 namespace DependencyInjectionWithPackages.Services.GpsInstrumentationProvider;
 
@@ -14,7 +14,7 @@ public sealed class GpsInstrumentationProvider : IGpsInstrumentationProvider
 {
     private readonly IAppCache _appCache;
     private readonly ILogger<GpsInstrumentationProvider> _logger;
-    private readonly IRandomProvider _randomProvider;
+    private readonly IRandomNumberProvider _randomProvider;
     private readonly ICircleTracker _circleTracker;
     private readonly CircleOptions _circleOptions;
     private readonly GlobeOptions _globeOptions;
@@ -23,7 +23,7 @@ public sealed class GpsInstrumentationProvider : IGpsInstrumentationProvider
     public GpsInstrumentationProvider(
         IAppCache appCache,
         ILogger<GpsInstrumentationProvider> logger,
-        IRandomProvider randomProvider,
+        IRandomNumberProvider randomProvider,
         ICircleTracker circleTracker,
         IOptions<GlobeOptions> globeOptions,
         IOptions<CircleOptions> circleOptions)
@@ -39,19 +39,19 @@ public sealed class GpsInstrumentationProvider : IGpsInstrumentationProvider
     public Coordinate GetSensorCoordinate1()
     {
         var currentCoordinate = GetCurrentCoordinate();
-        return new Coordinate(currentCoordinate.Latitude + (_randomProvider.Random.NextDouble() - 0.5) * 0.001, currentCoordinate.Longitude + (_randomProvider.Random.NextDouble() - 0.5) * 0.001);
+        return new Coordinate(currentCoordinate.Latitude + _randomProvider.GetNextDoubleBetween(-0.005, 0.005), currentCoordinate.Longitude + _randomProvider.GetNextDoubleBetween(-0.005, 0.005));
     }
 
     public Coordinate GetSensorCoordinate2()
     {
         var currentCoordinate = GetCurrentCoordinate();
-        return new Coordinate(currentCoordinate.Latitude + (_randomProvider.Random.NextDouble() - 0.5) * 0.002, currentCoordinate.Longitude + (_randomProvider.Random.NextDouble() - 0.5) * 0.002);
+        return new Coordinate(currentCoordinate.Latitude + _randomProvider.GetNextDoubleBetween(-0.01, 0.01), currentCoordinate.Longitude + _randomProvider.GetNextDoubleBetween(-0.01, 0.01));
     }
 
     public Coordinate GetSensorCoordinate3()
     {
         var currentCoordinate = GetCurrentCoordinate();
-        return new Coordinate(currentCoordinate.Latitude + (_randomProvider.Random.NextDouble() - 0.5) * 0.003, currentCoordinate.Longitude + (_randomProvider.Random.NextDouble() - 0.5) * 0.003);
+        return new Coordinate(currentCoordinate.Latitude + _randomProvider.GetNextDoubleBetween(-0.015, 0.015), currentCoordinate.Longitude + _randomProvider.GetNextDoubleBetween(-0.015, 0.015));
     }
 
 
@@ -76,17 +76,17 @@ public sealed class GpsInstrumentationProvider : IGpsInstrumentationProvider
 
         Coordinate GetCurrentCoordinateInner()
         {
-            var centreLatitudeInRadians = ConvertToRadians(_circleTracker.CircleCentreCoordinate.Latitude);
-            var cantreLongitudeInRadians = ConvertToRadians(_circleTracker.CircleCentreCoordinate.Longitude);
-            var circleRadiusToEarthRadiusRatio = _circleOptions.CircleRadiusInKm / _globeOptions.RadiusOfGlobeInKm;
+            var centreLatitudeInRadians = ConvertToRadians(_circleOptions.CircleCentreCoordinate.Latitude);
+            var centreLongitudeInRadians = ConvertToRadians(_circleOptions.CircleCentreCoordinate.Longitude);
+            var circleRadiusToGlobeRadiusRatio = _circleOptions.CircleRadiusInKm / _globeOptions.RadiusOfGlobeInKm;
 
             // Calculate new latitude and longitude values based on angle and circle radius using the Haversine formula
-            // to determine the coordinates on the surface of a sphere of radius equal to Earth's radius
-            var newLatitudeInRadians = Math.Asin(Math.Sin(centreLatitudeInRadians) * Math.Cos(circleRadiusToEarthRadiusRatio) +
-                Math.Cos(centreLatitudeInRadians) * Math.Sin(circleRadiusToEarthRadiusRatio) * Math.Cos(_circleTracker.CurrentAngleInRadians));
+            // to determine the coordinates on the surface of a sphere of radius equal to the provided globe.
+            var newLatitudeInRadians = Math.Asin(Math.Sin(centreLatitudeInRadians) * Math.Cos(circleRadiusToGlobeRadiusRatio) +
+                Math.Cos(centreLatitudeInRadians) * Math.Sin(circleRadiusToGlobeRadiusRatio) * Math.Cos(_circleTracker.CurrentAngleInRadians));
 
-            var newLongitudeInRadians = cantreLongitudeInRadians + Math.Atan2(Math.Sin(_circleTracker.CurrentAngleInRadians) * Math.Sin(circleRadiusToEarthRadiusRatio) * Math.Cos(centreLatitudeInRadians),
-                Math.Cos(circleRadiusToEarthRadiusRatio) - Math.Sin(centreLatitudeInRadians) * Math.Sin(newLatitudeInRadians));
+            var newLongitudeInRadians = centreLongitudeInRadians + Math.Atan2(Math.Sin(_circleTracker.CurrentAngleInRadians) * Math.Sin(circleRadiusToGlobeRadiusRatio) * Math.Cos(centreLatitudeInRadians),
+                Math.Cos(circleRadiusToGlobeRadiusRatio) - Math.Sin(centreLatitudeInRadians) * Math.Sin(newLatitudeInRadians));
 
             var newLatitudeInDegrees = ConvertToDegrees(newLatitudeInRadians);
             var newLongitudeInDegrees = ConvertToDegrees(newLongitudeInRadians);

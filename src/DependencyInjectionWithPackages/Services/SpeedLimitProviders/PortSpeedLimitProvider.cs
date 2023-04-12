@@ -1,5 +1,4 @@
 ﻿using DependencyInjectionWithPackages.Options;
-using DependencyInjectionWithPackages.Services.CircleTracker;
 using DependencyInjectionWithPackages.Services.CurrentCoordinateProvider;
 using Microsoft.Extensions.Options;
 using OneOf;
@@ -11,14 +10,17 @@ namespace DependencyInjectionWithPackages.Services.SpeedLimitProviders;
 public sealed class PortSpeedLimitProvider : ISpeedLimitProvider
 {
     private readonly ICurrentCoordinateProvider _coordinateAggregator;
-    private readonly ICircleTracker _circleTracker;
+    private readonly CircleOptions _circleOptions;
     private readonly SpeedLimitOptions _speedLimitOptions;
 
     /// <inheritdoc cref="PortSpeedLimitProvider"/>
-    public PortSpeedLimitProvider(ICurrentCoordinateProvider coordinateAggregator, ICircleTracker circleTracker, IOptions<SpeedLimitOptions> speedLimitOptions)
+    public PortSpeedLimitProvider(
+        ICurrentCoordinateProvider coordinateAggregator,
+        IOptions<CircleOptions> circleOptions,
+        IOptions<SpeedLimitOptions> speedLimitOptions)
     {
         _coordinateAggregator = coordinateAggregator;
-        _circleTracker = circleTracker;
+        _circleOptions = circleOptions.Value;
         _speedLimitOptions = speedLimitOptions.Value;
     }
 
@@ -27,7 +29,7 @@ public sealed class PortSpeedLimitProvider : ISpeedLimitProvider
         var currentCoordinate = _coordinateAggregator.GetCurrentCoordinate();
 
         // Port speed restrictions apply in right half of circle
-        if (currentCoordinate.Longitude > _circleTracker.CircleCentreCoordinate.Longitude)
+        if (currentCoordinate.Longitude > _circleOptions.CircleCentreCoordinate.Longitude)
             return _speedLimitOptions.PortSpeedLimitInKm;
 
         return new None();

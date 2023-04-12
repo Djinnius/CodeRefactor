@@ -1,5 +1,5 @@
 ﻿using DependencyInjectionWithPackages.Services.GpsInstrumentationProvider;
-using GpsPackage;
+using GpsPackage.DataObjects;
 using GpsPackage.Services.GpsCoordinateAveragingService;
 
 namespace DependencyInjectionWithPackages.Services.CurrentCoordinateProvider;

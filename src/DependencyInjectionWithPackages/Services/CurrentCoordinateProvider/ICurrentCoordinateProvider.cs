@@ -1,4 +1,4 @@
-﻿using GpsPackage;
+﻿using GpsPackage.DataObjects;
 
 namespace DependencyInjectionWithPackages.Services.CurrentCoordinateProvider;
 

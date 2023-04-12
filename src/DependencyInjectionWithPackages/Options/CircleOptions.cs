@@ -1,8 +1,11 @@
-﻿using GpsPackage;
+﻿using GpsPackage.DataObjects;
 using Microsoft.Extensions.Options;
 
 namespace DependencyInjectionWithPackages.Options;
 
+/// <summary>
+///     Options class containing the defining characteristics for the circle the vessel is navigating around.
+/// </summary>
 public class CircleOptions : IOptions<CircleOptions>
 {
     /// <summary>

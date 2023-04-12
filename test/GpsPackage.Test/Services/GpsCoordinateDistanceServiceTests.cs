@@ -1,4 +1,4 @@
-﻿using GpsPackage;
+﻿using GpsPackage.DataObjects;
 using GpsPackage.Options;
 using GpsPackage.Services.GpsCoordinateDistanceService;
 

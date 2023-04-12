@@ -1,4 +1,4 @@
-﻿namespace GpsPackage;
+﻿namespace GpsPackage.DataObjects;
 
 /// <summary>
 ///     A coordinate representing the position on a sphere in terms of latitude and longitude in decimal degrees.
